@@ -35,11 +35,12 @@ function createRock(x) {
   const rock = document.createElement('div');
   rock.className = 'rock';
   rock.style.left = `${x}px`;
-  rock.style.top = top = 0;
+  var top = 0;
+  rock.style.top = top;
   GAME.appendChild(rock);
-  debugger;
+
   function moveRock(rock) {
-    rock.style.top = `${top += 2}px`;
+    rock.style.top = `${rock.style.top += 2}px`;
     if (checkCollision) {
       endGame();
     } if (top < 380) {
