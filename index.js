@@ -35,8 +35,7 @@ function createRock(x) {
   const rock = document.createElement('div');
   rock.className = 'rock';
   rock.style.left = `${x}px`;
-  const top = 0;
-  rock.style.top = top;
+  var top = 0;
   GAME.appendChild(rock);
 
   function moveRock(rock) {
