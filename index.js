@@ -77,7 +77,6 @@ function endGame() {
 
 
 function moveDodger(e) {
-  $(document).on('keydown', function(e) {
     if (e.which === LEFT_ARROW) {
     moveDodgerLeft();
     e.stopPropagation();
@@ -89,7 +88,6 @@ function moveDodger(e) {
     } else {
       return false
     }
-  });
 }
 
 function moveDodgerLeft() {
