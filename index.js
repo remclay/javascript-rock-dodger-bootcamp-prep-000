@@ -51,7 +51,7 @@ function createRock(x) {
   function moveRock(rock) {
     rock.style.top = `${top += 2}px`
 
-    if (checkCollision) {
+    if (checkCollision(rock)) {
       endGame();
     }
 
