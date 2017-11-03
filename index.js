@@ -80,12 +80,19 @@ function endGame() {
 
 function moveDodger(e) {
   $(document).on('keydown', function(e) {
-    if (e.which === LEFT_ARROW) {
+    if (e.which !=== LEFT_ARROW && e.which !=== RIGHT_ARROW){
+      return false
+    }
+    else {
+      e.stopPropagation();
+      e.preventDefault();
+      if (e.which === LEFT_ARROW) {
       moveDodgerLeft();
-    }
-    else if (e.which === RIGHT_ARROW) {
+      }
+      if (e.which === RIGHT_ARROW) {
       moveDodgerRight();
-    }
+      }
+    }  
 });
 }
 
