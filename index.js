@@ -18,53 +18,40 @@ var gameInterval = null
  */
 
 function checkCollision(rock) {
-
-  const top = positionToInteger(rock.style.top)
-
+  const top = positionToInteger(rock.style.top);
   if (top > 360) {
-    const dodgerLeftEdge = positionToInteger(DODGER.style.left)
-
+    const dodgerLeftEdge = positionToInteger(DODGER.style.left);
     const dodgerRightEdge = dodgerLeftEdge + 40;
-
-    const rockLeftEdge = positionToInteger(rock.style.left)
-
+    const rockLeftEdge = positionToInteger(rock.style.left);
     const rockRightEdge = rockLeftEdge + 20;
-
-    if ((rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) || (rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge) || (rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge))
-
-      return true
+    if ((rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) ||
+        (rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge) ||
+        (rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge))
+      return true;
     }
 }
 
 function createRock(x) {
-  const rock = document.createElement('div')
-
-  rock.className = 'rock'
-  rock.style.left = `${x}px`
-
-  var top = 0
-  rock.style.top = top
-
-  GAME.appendChild(rock)
-
+  const rock = document.createElement('div');
+  rock.className = 'rock';
+  rock.style.left = `${x}px`;
+  var top = 0;
+  rock.style.top = top; 
+  GAME.appendChild(rock); 
 
   function moveRock(rock) {
-    rock.style.top = `${top += 2}px`
-
+    rock.style.top = `${top += 2}px`; 
     if (checkCollision) {
       endGame();
-    }
-
-    if (top < 380) {
+    } if (top < 380) {
       window.requestAnimationFrame(moveRock);
-      }
-    else {
+    } else {
       rock.remove();
     }
   }
-      window.requestAnimationFrame(moveRock);
-      ROCKS.push(rock);
-      return rock;
+    window.requestAnimationFrame(moveRock);
+    ROCKS.push(rock);
+    return rock;
 }
 
 
@@ -76,7 +63,6 @@ function endGame() {
   }
   alert("YOU LOSE!");
 }
-
 
 function moveDodger(e) {
     if (e.which === LEFT_ARROW) {
