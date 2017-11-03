@@ -78,20 +78,21 @@ function endGame() {
 
 function moveDodger(e) {
   $(document).on('keydown', function(e) {
-    if (e.which !=== LEFT_ARROW && e.which !=== RIGHT_ARROW){
-      return false
+    if (e.which === LEFT_ARROW) {
+    moveDodgerLeft();
+    e.stopPropagation();
+    e.preventDefault();
+    }
+    else if (e.which === RIGHT_ARROW) {
+    moveDodgerRight();
+    e.stopPropagation();
+    e.preventDefault();
     }
     else {
-      e.stopPropagation();
-      e.preventDefault();
-      if (e.which === LEFT_ARROW) {
-      moveDodgerLeft();
-      }
-      if (e.which === RIGHT_ARROW) {
-      moveDodgerRight();
-      }
+      return false
     }
-});
+      
+  });
 }
 
 function moveDodgerLeft() {
@@ -101,7 +102,6 @@ function moveDodgerLeft() {
       window.requestAnimationFrame(moveDodgerLeft)
     }
 }
-
 
 function moveDodgerRight() {
   var dodgerLeftEdge = positionToInteger(DODGER.style.left);
