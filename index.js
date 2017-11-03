@@ -34,13 +34,13 @@ function checkCollision(rock) {
 function createRock(x) {
   const rock = document.createElement('div');
   rock.className = 'rock';
-  rock.style.left = `${x}px`;
+  rock.style.left = `$0px`;
   var top = 0;
   rock.style.top = top;
   GAME.appendChild(rock);
 
   function moveRock(rock) {
-    rock.style.top = `${positionToInteger(rock.style.top) + 2}px`;
+    rock.style.top = `${top += 2}px`;
     if (checkCollision) {
       endGame();
     } if (top < 380) {
