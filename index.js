@@ -38,7 +38,7 @@ function createRock(x) {
   var top = 0;
   rock.style.top = top;
   GAME.appendChild(rock);
-
+  debugger;
   function moveRock(rock) {
     rock.style.top = `${top += 2}px`;
     if (checkCollision) {
