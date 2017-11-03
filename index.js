@@ -40,7 +40,7 @@ function createRock(x) {
   GAME.appendChild(rock);
 
   function moveRock(rock) {
-    rock.style.top = `${top += 2}px`;
+    rock.style.top = `${positionToInteger(rock.style.top) + 2}px`;
     if (checkCollision) {
       endGame();
     } if (top < 380) {
