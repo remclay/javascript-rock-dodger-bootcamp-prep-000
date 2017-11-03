@@ -61,7 +61,7 @@ function endGame() {
   for (let i = 0; i < ROCKS.length; i++) {
     ROCKS[i].remove();
   }
-  alert("YOU LOSE!");
+  return alert("YOU LOSE!");
 }
 
 function moveDodger(e) {
