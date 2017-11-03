@@ -43,7 +43,7 @@ function createRock(x) {
     rock.style.top = `${top += 2}px`;
     if (checkCollision(rock)) {
       endGame();
-    } if (top < 380) {
+    } if (top < GAME_HEIGHT - 20) {
       window.requestAnimationFrame(moveRock);
     } else {
       rock.remove();
