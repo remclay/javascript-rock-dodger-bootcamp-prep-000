@@ -36,11 +36,11 @@ function createRock(x) {
   rock.className = 'rock';
   rock.style.left = `${x}px`;
   var top = 0;
-  rock.style.top = top; 
-  GAME.appendChild(rock); 
+  rock.style.top = top;
+  GAME.appendChild(rock);
 
   function moveRock(rock) {
-    rock.style.top = `${top += 2}px`; 
+    rock.style.top = `${top += 2}px`;
     if (checkCollision) {
       endGame();
     } if (top < 380) {
@@ -81,16 +81,16 @@ function moveDodger(e) {
 function moveDodgerLeft() {
   var dodgerLeftEdge = positionToInteger(DODGER.style.left);
     if (dodgerLeftEdge > 0) {
-      DODGER.style.left = `${dodgerLeftEdge - 4}px`
-      window.requestAnimationFrame(moveDodgerLeft)
+      DODGER.style.left = `${dodgerLeftEdge - 4}px`;
+      window.requestAnimationFrame(moveDodgerLeft);
     }
 }
 
 function moveDodgerRight() {
   var dodgerLeftEdge = positionToInteger(DODGER.style.left);
     if (dodgerLeftEdge < 360) {
-      DODGER.style.left = `${dodgerLeftEdge + 4}px`
-      window.requestAnimationFrame(moveDodgerRight)
+      DODGER.style.left = `${dodgerLeftEdge + 4}px`;
+      window.requestAnimationFrame(moveDodgerRight);
     }
 }
 
