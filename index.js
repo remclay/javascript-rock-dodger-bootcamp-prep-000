@@ -91,7 +91,7 @@ function moveDodger(e) {
     else {
       return false
     }
-      
+
   });
 }
 
